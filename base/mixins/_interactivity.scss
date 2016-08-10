@@ -1,0 +1,7 @@
+﻿@mixin transition-on-hover($properties...) {
+    @include transition--base($properties);
+
+    &:hover {
+        @content;
+    }
+}

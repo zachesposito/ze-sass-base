@@ -1,0 +1,28 @@
+﻿@mixin percentage-width-with-margin($children-across,$common-margin){
+	$margin-width: (($children-across - 1) * $common-margin);
+	$width-less-margin: 100% - $margin-width;
+	
+	width: $width-less-margin / $children-across;
+	margin:0 $common-margin;
+}
+
+
+@mixin percentage-width-with-margin-between($children-across,$common-margin,$previous-children-across:0){
+	$margin-width: (($children-across - 1) * $common-margin);
+	$width-less-margin: 100% - $margin-width;
+	
+	width: $width-less-margin / $children-across;
+	margin-right:$common-margin;
+
+    //this is for if this mixin is being used multiple times for different breakpoints in a selector. For example, if going from 2 across to 3 across, gotta get rid of the old nth:child(2n){margin-right:0}
+    @if $previous-children-across != 0 {
+	    &:nth-child(#{$previous-children-across}n) {
+		    margin-right:$common-margin;
+	    }
+    }
+
+	&:nth-child(#{$children-across}n) {
+		margin-right:0;
+	}
+
+}

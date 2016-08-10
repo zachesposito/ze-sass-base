@@ -1,0 +1,4 @@
+﻿$defaultFontSize: 16px;
+@function get-ems-from-px($pixels) {
+	@return ($pixels / $defaultFontSize) * 1em;
+}

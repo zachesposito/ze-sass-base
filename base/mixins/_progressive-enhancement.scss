@@ -1,0 +1,21 @@
+﻿//For use with Modernizr
+@mixin if-feature($features...){
+    $feature-selector: 'html';
+    @for $i from 1 through length($features){
+        $feature-selector: $feature-selector + '.' + nth($features,$i);
+    }   
+
+    #{$feature-selector} & { 
+        @content;
+    }
+}
+@mixin if-feature--prefixed($features...){
+    $feature-selector: 'html';
+    @for $i from 1 through length($features){
+        $feature-selector: $feature-selector + '.mod-' + nth($features,$i);
+    }   
+
+    #{$feature-selector} & { 
+        @content;
+    }
+}

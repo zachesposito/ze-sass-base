@@ -1,0 +1,32 @@
+%group {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+%vertical-rhythm {
+    margin:1rem 0;
+}
+%vertical-rhythm--bottom {
+    margin-bottom:1rem;
+}
+%absolutelycentered {
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	margin:auto;
+}
+//for backwards compatibility
+%absolutely-centered { 
+	@extend %absolutelycentered;
+}
+
+%structural-list {
+	list-style:none;
+	margin:0;
+	padding:0;
+}

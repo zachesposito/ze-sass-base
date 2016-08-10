@@ -1,0 +1,8 @@
+﻿
+$old-ie: false !default;
+@mixin old-ie {
+    // Only use this content if we're dealing with old IE
+    @if $old-ie {
+        @content;
+    }
+}

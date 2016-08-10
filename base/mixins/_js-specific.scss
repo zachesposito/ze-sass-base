@@ -1,0 +1,10 @@
+//usually called like: @include js-hook--active(&){}
+
+@mixin js-hook--active($selector, $activesuffix:'--active'){
+	$immediate-parent: nth(nth($selector,1), -1);
+	$js-selector: str-insert($immediate-parent,'js-',str-index($immediate-parent,'.')+1);
+
+	&#{$js-selector}#{$activesuffix} {
+		@content; 
+	}
+}  

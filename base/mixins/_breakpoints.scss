@@ -1,0 +1,33 @@
+﻿$fix-mqs: false !default;
+
+@mixin breakpoint($point) {	
+	@if (unit($point) == "px") {
+		$point: get-ems-from-px($point);
+	}
+
+	@if $fix-mqs {
+		@if $fix-mqs >= $point {
+			@content;
+		}
+	}
+	@else {
+		@media (min-width:$point) {@content;}
+	}
+}
+
+
+@mixin max-breakpoint($point) {	
+	@if (unit($point) == "px") {
+		$point: get-ems-from-px($point);
+	}
+
+	@if $fix-mqs {
+		@if $fix-mqs <= $point {
+			@content;
+		}
+	}
+	@else {
+		@media (max-width:$point) {@content;}
+	}
+}
+
