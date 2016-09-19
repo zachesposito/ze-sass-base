@@ -1,0 +1,20 @@
+{
+  "name": "ze-sass-base",
+  "homepage": "https://github.com/zesposi/ze-sass-base",
+  "authors": [
+    "Zach Esposito <zesposito@thermatru.com>"
+  ],
+  "description": "My Sass toolbox",
+  "main": "base/main.scss",
+  "keywords": [
+    "Sass"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
