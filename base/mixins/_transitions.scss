@@ -1,5 +1,7 @@
 ﻿$transition-timing--base: .2s !default;
 $transition-function--base:ease-out !default;
+
+//depends on bourbon:
 @mixin transition--base($properties...){
     $properties-string: nth($properties,1);
 
@@ -7,7 +9,11 @@ $transition-function--base:ease-out !default;
         @for $i from 2 through length($properties){ 
             $properties-string: $properties-string + ', ' + nth($properties,$i);
         }
+
+	    @include transition(all $transition-timing--base $transition-function--base);
+	    @include transition-property($properties-string); //easier to override for multiple properties
     }
-    //depends on bourbon:
-    @include transition($properties-string $transition-timing--base $transition-function--base);
+    @else {
+	    @include transition($properties-string $transition-timing--base $transition-function--base);
+  	}
 }

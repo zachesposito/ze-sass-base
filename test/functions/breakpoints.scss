@@ -1,0 +1,7 @@
+@include test('breakpoints/get-ems-from-px') {  	
+
+  $test: get-ems-from-px(32px);
+  $expect: 2em;
+  @include assert-equal($test, $expect,
+    'Calculate ems from pixels, assuming default font size is 16px');
+}

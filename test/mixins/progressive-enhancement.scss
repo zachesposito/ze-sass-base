@@ -1,0 +1,58 @@
+
+
+@include test('progressive-enhancement/if-feature') {  	
+	@include assert('Should prefix current selector with "html.some-class"'){
+		@include output {
+			@include if-feature(js){
+				font-size:inherit; //just an example
+			}
+		}
+		@include expect {
+			html.js & {
+				font-size:inherit;
+			}
+		}
+	} 
+
+	@include assert('Should handle multiple features'){
+		@include output {
+			@include if-feature(js, 3dtransforms, canvas){
+				font-size:inherit; //just an example
+			}
+		}
+		@include expect {
+			html.js.3dtransforms.canvas & {
+				font-size:inherit;
+			}
+		}
+	}    
+}
+
+
+@include test('progressive-enhancement/if-feature--prefixed') {  	
+	@include assert('Should prefix current selector with "html.mod-some-class"'){
+		@include output {
+			@include if-feature--prefixed(js){
+				font-size:inherit; //just an example
+			}
+		}
+		@include expect {
+			html.mod-js & {
+				font-size:inherit;
+			}
+		}
+	} 
+
+	@include assert('Should handle multiple features'){
+		@include output {
+			@include if-feature--prefixed(js, 3dtransforms, canvas){
+				font-size:inherit; //just an example
+			}
+		}
+		@include expect {
+			html.mod-js.mod-3dtransforms.mod-canvas & {
+				font-size:inherit;
+			}
+		}
+	}    
+}

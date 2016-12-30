@@ -1,0 +1,42 @@
+  @include test('grid/percentage-width-with-margin') {  	
+  	@include assert('Should output percentage width based on desired number of elements in one row, along with horizontal margin'){
+			@include output {
+				@include percentage-width-with-margin(3, 5%);
+			}
+			@include expect {
+				width: 30%;
+				margin: 0 5%;
+			}
+  	}    
+  }
+
+  @include test('grid/percentage-width-with-margin-between') {  	
+  	@include assert('Should output percentage width based on desired number of elements in one row. Also add right margin, except on last element in each row'){
+			@include output {
+				@include percentage-width-with-margin-between(3, 5%);
+			}
+			@include expect {
+				width: 30%;
+				margin-right: 5%;
+				&:nth-child(3n){
+					margin-right:0;
+				}
+			}
+  	}  
+
+  	@include assert('Should output same as above, but also unset a previous nth-child margin-right:0'){
+			@include output {
+				@include percentage-width-with-margin-between(3, 5%, 2);
+			}
+			@include expect {
+				width: 30%;
+				margin-right: 5%;
+				&:nth-child(2n){
+					margin-right:5%;
+				}
+				&:nth-child(3n){
+					margin-right:0;
+				}
+			}
+  	}    
+  }

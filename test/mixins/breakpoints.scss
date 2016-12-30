@@ -1,0 +1,29 @@
+@include test('breakpoints/breakpoint') {  	
+	@include assert('Should output min-width media query in ems'){
+		@include output {
+			@include breakpoint(320px){
+				font-size:inherit; //just an example
+			}
+		}
+		@include expect {
+			@media (min-width: 20em) {
+				font-size:inherit;
+			}
+		}
+	}    
+}
+
+@include test('breakpoints/max-breakpoint') {  	
+	@include assert('Should output max-width media query in ems'){
+		@include output {
+			@include max-breakpoint(320px){
+				font-size:inherit; //just an example
+			}
+		}
+		@include expect {
+			@media (max-width: 20em) {
+				font-size:inherit;
+			}
+		}
+	}    
+}

@@ -1,0 +1,26 @@
+@include test('transitions/transition--base') {  	
+	@include assert('Should call bourbon transition mixin with default timing of .2s and default transition of ease-out'){
+		@include output {
+			@include transition--base(all);
+		}
+		@include expect {
+			-webkit-transition:all 0.2s ease-out;
+			-moz-transition: all 0.2s ease-out;
+			transition: all 0.2s ease-out;
+		}
+	}  
+
+	@include assert('Should handle multiple properties'){
+		@include output {
+			@include transition--base(height, width, opacity);
+		}
+		@include expect {
+			-webkit-transition:all 0.2s ease-out;
+			-moz-transition: all 0.2s ease-out;
+			transition: all 0.2s ease-out;
+			-webkit-transition-property: height, width, opacity;
+      -moz-transition-property: height, width, opacity;
+      transition-property: height, width, opacity;
+		}
+	}  
+}

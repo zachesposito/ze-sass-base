@@ -17,5 +17,7 @@
     "test",
     "tests"
   ],
-  "devDependencies": {}
+  "dependencies": {
+    "bourbon": "^4.2.7"
+  }
 }
