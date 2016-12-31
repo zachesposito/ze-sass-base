@@ -1,6 +1,9 @@
 //Testing framework
 @import "true";
 
+//Bourbon dependency
+@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
+
 //ze-sass-base
 @import '../base/main.scss';
 
