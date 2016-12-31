@@ -1,12 +1,12 @@
 {
   "name": "ze-sass-base",
-  "version":"1.0.2",
+  "version":"1.0.4",
   "homepage": "https://github.com/zesposi/ze-sass-base",
   "authors": [
     "Zach Esposito <zesposito@thermatru.com>"
   ],
   "description": "My Sass toolbox",
-  "main": "base/main.scss",
+  "main": "base/ze-sass-base.scss",
   "keywords": [
     "Sass"
   ],
