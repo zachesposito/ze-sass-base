@@ -6,24 +6,27 @@
   "directories": {
     "test": "tests"
   },
-  "dependencies": {},
+  "dependencies": {
+    "bourbon": "4.3.4"
+  },
   "devDependencies": {
     "gulp": "^3.9.1",
-    "mocha": "^3.2.0",
-    "node-sass": "^4.0.0",
-    "sass-true": "^2.1.3"
+    "mocha": "^3.5.3",
+    "node-sass": "^4.9.0",
+    "node-sass-tilde-importer": "^1.0.2",
+    "sass-true": "^2.2.2"
   },
   "scripts": {
     "test": "mocha"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zesposi/ze-sass-base.git"
+    "url": "git+https://github.com/zachesposito/ze-sass-base.git"
   },
   "author": "Zach Esposito",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zesposi/ze-sass-base/issues"
+    "url": "https://github.com/zachesposito/ze-sass-base/issues"
   },
-  "homepage": "https://github.com/zesposi/ze-sass-base#readme"
+  "homepage": "https://github.com/zachesposito/ze-sass-base#readme"
 }
