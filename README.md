@@ -7,7 +7,7 @@ Install with `npm i ze-sass-base`.
 
 `npm test` to run function & mixin tests.
 
-##Contents
+## Contents
 * [Breakpoint mixins] 
 * [Grid calculation]
 * [Selectors for progressive enhancement]
